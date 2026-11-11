@@ -1,22 +1,21 @@
-# Cutest cat — v3
+# Cutest cat — v4
 
-A fluffy ginger kitten sitting upright, hugging a smiling pink plush fish
-with both paws. Enormous sparkling amber eyes, plain cream background.
-The purest version of the winning formula: ginger kitten + plush fish,
-no extra props.
+A fluffy cream-white kitten with a pink bow, big sparkling blue eyes,
+sitting on a soft purple blanket among white and purple flowers.
+The picture the user picked: soft, bright, and cute at a glance.
 
 ## What this program does
 
-`main.ts` copies the chosen picture (`entry.png`, next to the script) to
-`$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output/entry.png`), creating
-the output directory if needed. It then reads the copy back and throws if
-any byte differs from the source, so the output is always byte-identical
-to `entry.png`.
+`main.py` copies the chosen picture (`entry.png`, a JPEG, 1024x1024)
+to `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output/entry.png`),
+creating the output directory if needed. It checks the JPEG magic
+bytes, then reads the copy back and fails if any byte differs, so
+every run produces byte-identical output.
 
 ## Run locally
 
 ```sh
-MAKEFUN_OUTPUT_DIR=out node main.ts   # writes out/entry.png
+MAKEFUN_OUTPUT_DIR=out python3 main.py   # writes out/entry.png
 ```
 
-Requirements: Node 22, stdlib only, no dependencies, no network.
+Requirements: Python 3.13, stdlib only, no dependencies, no network.
