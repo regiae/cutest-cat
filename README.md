@@ -1,14 +1,22 @@
-# Cutest cat v2 — make.fun cutest-cat-01
+# Cutest cat — v3
 
-A ginger kitten with a daisy crown, blepping, hugging a smiling pink plush fish.
+A fluffy ginger kitten sitting upright, hugging a smiling pink plush fish
+with both paws. Enormous sparkling amber eyes, plain cream background.
+The purest version of the winning formula: ginger kitten + plush fish,
+no extra props.
 
-The program copies the image the repository holds (`entry.png`) to the output
-directory, so both runs write identical bytes.
+## What this program does
 
-Run it locally:
+`main.ts` copies the chosen picture (`entry.png`, next to the script) to
+`$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output/entry.png`), creating
+the output directory if needed. It then reads the copy back and throws if
+any byte differs from the source, so the output is always byte-identical
+to `entry.png`.
+
+## Run locally
 
 ```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+MAKEFUN_OUTPUT_DIR=out node main.ts   # writes out/entry.png
 ```
 
-The image is written to `out/entry.png`.
+Requirements: Node 22, stdlib only, no dependencies, no network.
